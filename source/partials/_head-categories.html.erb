@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="en-US">
+<meta charset="UTF-8" />
+<title><%= current_page.data.title || "SEOCharles" %></title>
+<meta name="robots" content="noindex, follow" />
+<% if paginate %>
+<% if prev_page %>
+<link rel="prev" href="<%= prev_page.url %>" />
+<% end %>
+<% if next_page %>
+<link rel="next" href="<%= next_page.url %>" />
+<% end %>
+<% end %> 
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="canonical" href="http://localhost:8888/" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<link rel="Shortcut Icon" href="../../images/favicon.ico" type="image/x-icon" />
+<meta itemprop="name" content="SEOCharles" />
+<meta itemprop="url" content="http://www.seocharles.com<%= current_page.url %>" />
+<link rel='stylesheet'  href='../../stylesheets/style.css' type='text/css' media='all' />
+<link rel="stylesheet" type="text/css" href="../../stylesheets/fonts.css">
+<script type="text/javascript" src="../../javascripts/seocharles.js"></script>
+</head>

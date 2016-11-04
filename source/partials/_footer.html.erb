@@ -1,0 +1,20 @@
+<footer>
+    <div class="page-center fl-elems" id="top-part-footer">
+        <div id="certifications">
+            <h2>Clients</h2>
+            <br />
+<p><img src="/images/clients-footer_440x101.jpg"  width="440"  height="101" alt="Clients footer"/></p>
+        </div>
+        <div id="latest-articles">
+            <h2>From the Blog</h2>
+            <ul id="articles">
+                <% blog.articles[0...4].each do |article| %>
+                    <li><a href="<%= article.url %>"><%= article.title %></a></li>
+                <% end %>
+            </ul>
+        </div>
+    </div>
+    <div id="copyright">
+        <p class="page-center">© <%= Time.now.year %> <a href="http://www.seocharles.com">SEOCharles</a> | <a href="/privacy">Privacy Policy</a><a href="http://spektrummedia.com/rock?c=seocharles" id="spektrum"><img src="http://www.spektrummedia.com/realisation-bl.png" alt="Une crÃ©ation Web de Spektrum Media" /></a></p>
+    </div>
+</footer>

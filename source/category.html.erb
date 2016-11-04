@@ -1,0 +1,51 @@
+---
+name: blog
+pageable: true
+per_page: 3
+title: <%= article.data.category %> : Blog - SEOCharles
+---
+
+<%= partial 'partials/head-categories' %>
+<%= partial 'partials/menu' %>
+<%= partial 'partials/blog-intro' %>
+
+<section id="page-content" class="blog">
+        <div class="page-center fl-elems">
+
+<% if paginate && num_pages > 1 %>
+  <p>Page <%= page_number %> of <%= num_pages %></p>
+
+  <% if prev_page %>
+    <p><%= link_to 'Previous page', prev_page %></p>
+  <% end %>
+<% end %>
+
+<div id="posts-list">
+<h1 class="category-title">Category: <%= category %></h1>
+<ul>
+  <% page_articles.each_with_index do |article, i| %>
+    <li>
+      <h2><%= link_to article.title, article %></h2>
+      <p class="post-infos">By <span class="author"><%= article.data.author %></span> on <span class="date"><%= article.date.strftime('%b %e %Y') %></span></p>
+        <div class="summary"><p><%= article.data.intro %></p></div>
+        <p class="posts-actions"><a href="<%= article.url %>">Read more</a> <a href="<%= article.url %>#disqus_thread" class="comments"></a></p>
+    </li>
+  <% end %>
+</ul>
+</div>
+
+        <% if paginate %>
+            <% if prev_page %>
+            <p><%= link_to 'Previous page', prev_page, { :class=>"left" } %></p>
+            <% end %>
+            <% if next_page %>
+            <p class="box-buttons fl-elems" id="bottom-buttons"><%= link_to 'Next page', next_page, { :class=>"right" } %></p>
+            <% end %>
+        <% end %>
+
+
+<%= partial 'partials/blog-sidebar' %>
+</div></section>
+
+<%= partial 'partials/footer' %>
+<%= partial 'partials/foot' %>
