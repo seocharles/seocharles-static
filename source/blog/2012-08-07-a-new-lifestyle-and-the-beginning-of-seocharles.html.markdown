@@ -1,7 +1,7 @@
 ---
 name: blog
 title: A new lifestyle...and the beginning of SEOCharles
-URL: a-new-lifestyle-and-the-beginning-of-seocharles.html
+URL: a-new-lifestyle-and-the-beginning-of-seocharles
 date: 2012-08-07 00:00 UTC
 author: Charles McLaughlin Piché
 category: Lifestyle

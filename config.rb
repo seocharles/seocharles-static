@@ -14,8 +14,8 @@ activate :blog do |blog|
 
   blog.custom_collections = {
     category: {
-      link: '{category}',
-      template: '/category.html'
+      link: '{category}.html',
+      template: 'category.html'
     }
   }
 
@@ -81,6 +81,12 @@ end
 helpers do
   def is_page_selected6(page)
     current_page.url == page ? "active" : ''
+  end
+end
+
+helpers do
+  def pagination_meta(page)
+    page_number >= '1' ? "noindex,follow" : ''
   end
 end
 

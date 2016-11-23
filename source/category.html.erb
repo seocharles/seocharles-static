@@ -1,25 +1,15 @@
 ---
+layout: category-layout
 name: blog
 pageable: true
-per_page: 3
-title: <%= article.data.category %> : Blog - SEOCharles
+title: Category Blog - SEOCharles
 ---
 
-<%= partial 'partials/head-categories' %>
-<%= partial 'partials/menu' %>
+
 <%= partial 'partials/blog-intro' %>
 
 <section id="page-content" class="blog">
         <div class="page-center fl-elems">
-
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
-
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
-
 <div id="posts-list">
 <h1 class="category-title">Category: <%= category %></h1>
 <ul>
@@ -32,8 +22,6 @@ title: <%= article.data.category %> : Blog - SEOCharles
     </li>
   <% end %>
 </ul>
-</div>
-
         <% if paginate %>
             <% if prev_page %>
             <p><%= link_to 'Previous page', prev_page, { :class=>"left" } %></p>
@@ -42,10 +30,8 @@ title: <%= article.data.category %> : Blog - SEOCharles
             <p class="box-buttons fl-elems" id="bottom-buttons"><%= link_to 'Next page', next_page, { :class=>"right" } %></p>
             <% end %>
         <% end %>
-
+</div>
 
 <%= partial 'partials/blog-sidebar' %>
 </div></section>
 
-<%= partial 'partials/footer' %>
-<%= partial 'partials/foot' %>
